@@ -10,11 +10,11 @@ sgMail.setApiKey(process.env.API_KEY)
 
 // registeration
 userRouter.post("/register", async (req, res) => {
-    const { email, pass, location, age } = req.body;
+    const { email, pass, username } = req.body;
     try {
         bcrypt.hash(pass, 5, async (err, hash) => {
             // Store hash in your password DB.
-            const user = new UserModel({ email, pass: hash, location, age });
+            const user = new UserModel({ email, pass: hash, username });
             await user.save()
             res.status(200).send({ "msg": "Registeration has been done!" });
         });
@@ -35,7 +35,7 @@ userRouter.post("/login", async (req, res) => {
 
             bcrypt.compare(pass, user.pass, (err, result) => {
                 if (result) {
-                    res.status(200).send({ "msg": "Login Successful", "email": user.email, "token": jwt.sign({ "userID": user._id }, "masai") })
+                    res.status(200).send({ "msg": "Login Successful", "email": user.email, "username": user.username, "token": jwt.sign({ "userID": user._id }, "masai") })
                 } else {
                     res.status(400).send({ "msg": "Wrong Credentials" })
                 }

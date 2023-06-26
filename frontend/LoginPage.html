@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./styles/LoginPage.css">
+</head>
+
+<body>
+    <div id="nav-container">
+        <div id="nav-box">
+            <div id="nav-fix">
+                <a href="index.html">Home</a>
+                <a href="./AboutPage.html">About</a>
+            </div>
+            <div id="nav-dynamic-1" class="nav-dynamic">
+                <a href="./SignupPage.html">Sign-up</a>
+                <a href=#>Login</a>
+            </div>
+            <div id="nav-dynamic-2" class="nav-dynamic">
+                <button id="logout-btn">Logout</button>
+                <h2 id="username-display"></h2>
+            </div>
+        </div>
+    </div>
+    <div id="form-container">
+        <div id="heading">
+            <h1>Login</h1>
+        </div>
+        <form action="">
+            <input type="text" placeholder="Email" id="emailIn">
+            <input type="password" placeholder="Password" id="passwordIn">
+            <button id="submitbtn">Submit</button>
+        </form>
+        <button id="forgot-btn">Fogot Password?</button>
+    </div>
+    <div id="otp-box">
+        <h1>Please Enter OTP</h1>
+        <form action=#>
+            <div id="input-field">
+                <input type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="otp-1">
+                <input type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="otp-2">
+                <input type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="otp-3">
+                <input type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="otp-4">
+            </div>
+        </form>
+        <input id="input-btn" type="submit">
+    </div>
+    <div id="new-pass-box">
+        <h1>Please Enter New Password</h1>
+        <form action=#>
+            <label for="pass1">Enter Password</label><br>
+            <input type="text" name="" id="pass1"><br>
+            <label for="pass2">Re-Enter Password</label><br>
+            <input type="text" name="" id="pass2"><br>
+            <button id="new-pass-btn">Submit</button>
+        </form>
+    </div>
+</body>
+<script src="./scripts/LoginPage.js"></script>
+
+</html>

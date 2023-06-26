@@ -5,8 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Chat App</title>
     <link rel="stylesheet" href="./styles/index.css">
+    <style>
+        .mydiv {
+            display: flex;
+            justify-content: right;
+            padding: 5px;
+        }
+
+        .otherdiv {
+            display: flex;
+            justify-content: left;
+            padding: 5px;
+        }
+
+        .innerdiv {
+            min-width: 200px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: baseline;
+            border: 2px solid grey;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,12 +53,20 @@
         <img src="./media/welcome.png" alt="error">
     </div>
     <div id="display-container">
-        
-        <!-- Socket IO Chat  -->
+
+
+        <h2>Total users: <b id="usercount"></b></h2>
+        <h2>Chat:</h2>
+        <pre id="messages" style="height: 400px; overflow: scroll;"></pre>
+        <input type="text" placeholder="message..." id="input">
+        <button onclick="sendMessage()">Send</button>
 
 
     </div>
 </body>
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+    integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+    crossorigin="anonymous"></script>
 <script src="./scripts/index.js"> </script>
 
 </html>

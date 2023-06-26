@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page</title>
+    <link rel="stylesheet" href="./styles/AboutPage.css">
+</head>
+
+<body>
+    <div id="nav-container">
+        <div id="nav-box">
+            <div id="nav-fix">
+                <a href="index.html">Home</a>
+                <a href=#>About</a>
+            </div>
+            <div id="nav-dynamic-1" class="nav-dynamic">
+                <a href="./SignupPage.html">Sign-up</a>
+                <a href="./LoginPage.html">Login</a>
+            </div>
+            <div id="nav-dynamic-2" class="nav-dynamic">
+                <button id="logout-btn">Logout</button>
+                <h2 id="username-display"></h2>
+            </div>
+        </div>
+    </div>
+    <div id="about-container">
+        <div id="heading">
+            <h1>About</h1>
+        </div>
+        <div id="details">
+            <h1>Project Description:</h1>
+            <h3>
+                This project aims to build a full-stack real-time group chat application using Node.js, Express,
+                MongoDB, HTML, CSS, JavaScript, Socket.io, and Nodemailer. The application includes user authentication
+                with email verification using Nodemailer or other suitable packages. It features user login with
+                authentication using Json Web Tokens (JWT) and real-time chat functionality using Socket.io. Users can
+                send and receive messages in real-time, ensuring smooth and instant communication.
+
+            </h3>
+            <h1>
+                Authors:
+            </h1>
+            <h3>
+                @abhimanyulp <br> <a href="https://github.com/abhimanyulp">Github</a>
+            </h3>
+        </div>
+    </div>
+</body>
+<script>
+
+
+    // <----------------Catching the Elements----------------->
+
+    let lsData = localStorage.getItem("username")
+    let nav_1 = document.getElementById("nav-dynamic-1")
+    let nav_2 = document.getElementById("nav-dynamic-2")
+    let username_display = document.getElementById("username-display")
+    let logoutBtn = document.getElementById("logout-btn");
+
+
+
+
+    //<----------------------Event Listeners--------------------->
+
+
+    window.addEventListener("load", (e) => {
+
+        if (lsData) {
+            nav_1.style.display = "none";
+            nav_2.style.display = "flex";
+            username_display.innerText = lsData;
+        }
+    })
+
+
+    logoutBtn.addEventListener("click", (e) => {
+        localStorage.setItem("username", "")
+        localStorage.setItem("localAccessToken", "")
+        location.reload()
+    })
+</script>
+
+</html>
