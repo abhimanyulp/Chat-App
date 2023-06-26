@@ -17,8 +17,7 @@ app.use(cors());
 //home route
 app.get("/", async (req, res) => {
     try {
-        res.send({ msg: "home route" })
-        //  res.render("index.ejs")
+        res.send("Welcome to the Backend of Chat-App")
     } catch (err) { console.log(err) }
 })
 app.use("/users", userRouter);
@@ -34,11 +33,10 @@ const io = socketio(serverHttp); // with wss we are attaching http server
 chatting(io); // using the imported chatting function and passing io instance/ object 
 
 
-serverHttp.listen(port, async () => {
+serverHttp.listen(port,"0.0.0.0", async () => {
     try {
         await connection;
         console.log("connected to db ")
-
     }
     catch (err) {
         console.log("error | connection", err)

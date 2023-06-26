@@ -1,4 +1,7 @@
-const baseServerURL = "http://localhost:4500"
+// const baseServerURL = "http://localhost:4500"
+const baseServerURL = "https://chat-app-backend-dep.up.railway.app"
+
+
 
 
 

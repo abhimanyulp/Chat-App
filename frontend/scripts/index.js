@@ -1,5 +1,5 @@
-const BaseServerURL = "http://localhost:4500/"
-// const BaseServerURL = "http:///"
+// const BaseServerURL = "http://localhost:4500/"
+const baseServerURL = "https://chat-app-backend-dep.up.railway.app"
 
 
 
@@ -49,7 +49,7 @@ logoutBtn.addEventListener("click", (e) => {
 
 
 
-const socket = io("http://localhost:4500/", { transports: ["websocket"] })
+const socket = io(baseServerURL, { transports: ["websocket"] })
 
        
 
