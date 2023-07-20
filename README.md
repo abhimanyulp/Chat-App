@@ -5,8 +5,8 @@ MongoDB, HTML, CSS, JavaScript, Socket.io, and SendGrid. The application include
 with email verification using SendGrid. It features user login with authentication using Json Web Tokens (JWT) and real-time chat functionality using Socket.io. Users can send and receive messages in real-time, ensuring smooth and instant communication.
 
 ## Deployed Links
-https://vocal-biscotti-3ca1fc.netlify.app/  **(Netlify)** \
-https://chat-app-backend-dep.up.railway.app/ **(Railway)** 
+https://the-chatter-box-app.netlify.app/  **(Netlify)** \
+https://chat-app-e7l1.onrender.com/ **(Render)** 
 
 
 ## Features
